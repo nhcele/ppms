@@ -1,0 +1,15 @@
+{
+    "name": "ppms/personnel-placement-management",
+    "description": "Personnel Placement Management System",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "tecnickcom/tcpdf": "^6.4",
+        "mpdf/mpdf": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PPMS\\": "app/"
+        }
+    }
+}

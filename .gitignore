@@ -1,0 +1,32 @@
+# Composer dependencies
+/vendor/
+
+# User uploads and generated files
+/uploads/
+/uploads/*
+
+# Database backups and SQL dumps
+*.sql
+
+# Local environment configuration
+/app/config.php
+.env
+
+# Log files
+error_log
+*.log
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Temporary test files
+test_*.php
+update_trigger.sql
+
+# Devin local configuration
+.devin/

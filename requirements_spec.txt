@@ -1,0 +1,70 @@
+RECRUITMENT SYSTEM Enhanced Candidate Information Collection &
+CV and Kandidato Anketa Document Generation
+Revised functional specification for the recruitment system developer and designer
+This version removes video upload and video-script functionality and provides a detailed specification for the Kandidato Anketa
+
+1. Purpose
+The recruitment system should provide a secure, flexible and user-friendly digital candidate information collection process. The Admin should be able to generate a unique questionnaire link for a specific candidate and determine exactly what information and documents that candidate is required to provide. The objective is to create a digital recruitment intake process, reduce incomplete applications and eliminate repeated data entry.
+2. Admin Creates a Candidate Questionnaire
+The Admin should have a function such as: Recruitment  Candidates  Create Information Request. When creating the request, the Admin should select the information and documents required from that particular candidate.
+3. Configurable Document Requirements
+Admin should select from a checklist of available document types: · Passport · National ID · CV · Academic Certificates · Professional Certificates · Driver's Licence · Reference Letter · Police Clearance · Medical Certificate · Passport Photograph · Other Document
+Each selected requirement should be configurable as Required or Optional. Only selected requirements should appear on the candidate questionnaire.
+4. Autosave and Recovery
+
+The questionnaire must automatically save information while the candidate is completing it. Autosave should protect against internet loss, accidental browser closure, phone calls, low battery, page refreshes and temporary system interruptions. Information should be saved after fields are completed, when moving between sections, at regular intervals such as every 10-30 seconds, and before navigation where technically possible. Display a clear status such as Saved, Saving, or Unable to Save - Checking Connection. If the candidate has not submitted the questionnaire, saved information must be restored when they return using a still-valid link.
+5. Link Expiry and Reissue
+The standard questionnaire link should remain active for a maximum of 1 hour. If a candidate is interrupted, the link remains subject to its original expiry time. Admin should be able to generate a new link or extend the process where authorized without losing previously saved candidate information.
+6. Multi-Step Questionnaire
+Use logical sections instead of one long form: · Personal Information · Employment Information · Education & Qualifications · Documents · Additional Information · Declaration & Submission
+Show candidate progress through the questionnaire using sections and/or an overall percentage.
+7. Required Fields and Validation
+Admin should determine whether individual questions are Required or Optional. Required fields must be completed before final submission. Validate phone numbers, email addresses, dates, employment periods, passport formats where applicable and uploaded files. The system should prevent impossible or contradictory information where validation rules are available.
+8. Document Upload
+Candidates should be able to upload documents from phones, tablets and computers. Support common formats such as PDF, JPG/JPEG and PNG, with DOC/DOCX where required. Show document name, upload status and file size. Allow the candidate to replace an incorrectly uploaded document before final submission. Academic Certificates and similar requirements should support one or multiple files.
+9. Mobile-Friendly Design
+
+The questionnaire should be designed primarily for mobile users and work properly on Android, iPhone, tablets, laptops and desktops. Candidates should be able to photograph documents directly from their phone and upload them.
+10. Candidate Declaration and Final Submission
+Before submission, the candidate should review all sections and correct information. The declaration should confirm that the information and documents provided are true, complete and accurate to the best of the candidate's knowledge. On final submission the system must validate mandatory information and documents, save all information and files, record the declaration, mark the questionnaire Submitted, invalidate the link, prevent further edits, record date/time and notify the Admin.
+11. Admin Review Dashboard
+Provide a dashboard showing Candidate, Position, Recruitment Destination, Progress, Documents, Status and Action. Admin should quickly identify incomplete applications and missing documents. Show exactly what has been received and what is missing. Add a Request Correction function so Admin can identify specific information or documents that require correction without making the candidate restart the entire questionnaire.
+12. Security and Audit Trail
+Every questionnaire link must contain a secure random token. Sensitive candidate information must not be exposed in the URL. The system must verify that the token exists, belongs to the correct questionnaire, has not expired, has not been submitted and has not been revoked. Record creation, sending, opening, autosaves where useful, document uploads, submission, expiry, revocation, correction requests and Admin actions, including user, date and time. Candidate data and documents must be securely stored and accessible only to authorised users.
+13. Recommended Statuses
+Recommended statuses: · Link Created · Link Sent · Opened · In Progress · Incomplete · Submitted · Under Review · Approved · Correction Required · Expired
+
+· Revoked · Completed
+14. Recommended Additional Features
+Save & Continue Later. Optional candidate verification such as phone number plus date of birth. Duplicate candidate detection using passport, ID, phone or email. Unique application reference number. Draft recovery. Upload checklist. Admin-controlled expiry and reissue.
+15. CV and Recruitment Document Generation
+The system should allow the Admin to generate recruitment documents directly from information already captured in the candidate questionnaire. The objective is to avoid entering the same information multiple times. After reviewing a candidate, Admin should have an option such as: Candidate  Generate Documents. The system should generate documents from the candidate's existing database information rather than creating a second independent record.
+16. CV Template Selection
+Admin should be able to select the appropriate CV template according to recruitment destination: · Lithuania CV Template · Turkey CV Template · Generic CV Template · Kandidato Anketa · Additional templates added in future
+The system should automatically populate the selected template using captured candidate information. Templates for each cv are attached seperately from this document The final document should be downloadable in Word and/or PDF format.
+17. Candidate Information Reuse
+Information entered once should be reusable throughout the recruitment process. For example, if a candidate records tobacco production experience, forklift operation, front-end loader operation, road construction experience and construction work in South Africa, that information should be available for CV generation. Admin should be able to edit, shorten, expand or rearrange information before generating the final document.
+
+18. Template Management
+Templates should be managed by authorised Admin users. Templates should be categorised, for example:
+· CV - Lithuania · CV - Turkey · CV - Generic · Kandidato Anketa · Other recruitment forms The system should support adding new templates in future.
+19. Template Field Mapping
+Each template should have predefined fields mapped to the candidate database.
+Where information is unavailable, the system should leave the field blank or flag it for Admin completion.
+20. Document Version Control
+
+21. Recruitment Destination
+The recruitment destination should be stored against the candidate/application. Examples include Lithuania, Turkey or Generic/Other. The system can recommend or automatically select appropriate document templates based on the destination. If no destination-specific template exists, Admin should be able to select the Generic CV.
+22. Designer Reference Templates
+The Admin/development team will provide the actual Lithuania CV, Turkey CV, Generic CV and Kandidato Anketa templates separately. These templates should be treated as the visual and structural reference for the designer/developer. The developer should connect the supplied template fields to the candidate database while preserving the intended structure and presentation. The core principle is: Candidate Data  Selected Template  Generated Document.
+23. End-to-End Workflow
+ADMIN: Create Candidate  Select Position/Recruitment Campaign  Select Required Information  Select Required Documents  Add Instructions  Generate Secure Link  Send Link. CANDIDATE: Open Link  Complete Personal Information  Employment  Qualifications  Upload Required Documents  Autosave  Review  Accept Declaration  Submit. SYSTEM: Validate  Save Information & Documents  Invalidate Link  Mark Submitted  Notify Admin. ADMIN: Review Candidate  Approve or Request Correction  Select CV/Kandidato Ank Template  Generate Document  Review/Edit  Download Word/PDF  Move Candidate to Next Recruitment Stage.
+24. Recommended Data Structure
+Treat Candidate and Questionnaire Request as separate records. Example: Candidate - John Doe, Candidate ID CAND-00458. Questionnaire Request - Request ID QR-00984, Candidate CAND-00458, secure token, created time, expiry time and status. Requirements should be stored against the questionnaire request, for example: Passport - Required; CV - Required; Academic Certificate - Required; Reference Letter - Optional. This allows the same candidate record to support different recruitment applications without unnecessarily duplicating candidate information.
+25. Final Objective
+The final system should feel like a guided digital recruitment onboarding process rather than a traditional form. The candidate should be able to open one secure link on a phone, complete the questionnaire progressively, have information automatically saved, upload only the documents specifically requested by Admin, recover from interruptions, review the information and submit it once.
+
+Admin should have complete control over requested information, documents, instructions, application status and subsequent recruitment workflow.
+Most importantly, information captured once should be reusable for CVs, Kandidato Anketa and other destination-specific recruitment documents.
+
+

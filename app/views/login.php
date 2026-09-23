@@ -1,0 +1,30 @@
+<?php 
+require_once __DIR__ . '/../lib/csrf.php';
+
+if (isset($_SESSION['error'])): ?>
+    <div class="alert alert-danger"><?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></div>
+<?php endif; ?>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Login</div>
+                <div class="card-body">
+                    <form method="post" action="<?php echo base_url('app/controllers/auth_controller.php?action=login'); ?>">
+                        <?php csrf_field(); ?>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

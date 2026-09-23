@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="140" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="16" height="16" rx="4" fill="url(#g)"/>
+  <path d="M12 20L16.5 9L20 16L24 9L26 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 20H36V12H40V13.5H37.5V15H39.5V16.5H37.5V18.5H40V20Z" fill="currentColor"/>
+  <path d="M44.5 20H42V12H44.5C46.4 12 48 13.1 48 16C48 18.9 46.4 20 44.5 20ZM43.5 18.5H44.5C45.3 18.5 46.5 18.1 46.5 16C46.5 13.9 45.3 13.5 44.5 13.5H43.5V18.5Z" fill="currentColor"/>
+  <path d="M54 12V20H52.5V14.5L50 16V14.5L52.5 12.5V12H54Z" fill="currentColor"/>
+  <path d="M59.5 20H55V12H59.5V13.5H56.5V15H59V16.5H56.5V18.5H59.5V20Z" fill="currentColor"/>
+  <path d="M64.5 20H62V12H64.5C66.4 12 68 13.1 68 16C68 18.9 66.4 20 64.5 20ZM63.5 18.5H64.5C65.3 18.5 66.5 18.1 66.5 16C66.5 13.9 65.3 13.5 64.5 13.5H63.5V18.5Z" fill="currentColor"/>
+  <path d="M70 20V12H71.5V18.5H75V20H70Z" fill="currentColor"/>
+  <path d="M80 12V20H78.5V14.5L76 16V14.5L78.5 12.5V12H80Z" fill="currentColor"/>
+  <path d="M85.5 20H81V12H85.5V13.5H82.5V15H85V16.5H82.5V18.5H85.5V20Z" fill="currentColor"/>
+  <path d="M90 20V12H91.5V18.5H95V20H90Z" fill="currentColor"/>
+  <path d="M96 12H97.5V18.5H101V20H96V12Z" fill="currentColor"/>
+  <path d="M106 20H104.5V14.5L102 16V14.5L104.5 12.5V12H106V20Z" fill="currentColor"/>
+  <path d="M110 20V12H116V13.5H111.5V15H115.5V16.5H111.5V18.5H116V20H110Z" fill="currentColor"/>
+  <path d="M120 20V12H124C126.2 12 128 13.1 128 16C128 18.9 126.2 20 124 20H120ZM124 18.5C125.4 18.5 126.5 17.6 126.5 16C126.5 14.4 125.4 13.5 124 13.5H121.5V18.5H124Z" fill="currentColor"/>
+  <path d="M134 12V20H132.5V14.5L130 16V14.5L132.5 12.5V12H134Z" fill="currentColor"/>
+</svg>

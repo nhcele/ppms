@@ -1,0 +1,270 @@
+/* Mindelta Theme for PPMS - Bootstrap override layer */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Map Mindelta palette to Bootstrap CSS variables */
+  /* Primary (Mindelta blue 600) */
+  --bs-primary: #2563eb;
+  --bs-primary-rgb: 37, 99, 235;
+
+  /* Secondary (Slate 700) */
+  --bs-secondary: #334155;
+  --bs-secondary-rgb: 51, 65, 85;
+
+  /* Success (Green 500) */
+  --bs-success: #22c55e;
+  --bs-success-rgb: 34, 197, 94;
+
+  /* Warning (Amber 500) */
+  --bs-warning: #f59e0b;
+  --bs-warning-rgb: 245, 158, 11;
+
+  /* Danger (Red 500) */
+  --bs-danger: #ef4444;
+  --bs-danger-rgb: 239, 68, 68;
+
+  /* Info (use Primary 400 for a bright info) */
+  --bs-info: #60a5fa;
+  --bs-info-rgb: 96, 165, 250;
+
+  /* Dark/Light derived from Slate */
+  --bs-dark: #0f172a;  /* Slate 900 */
+  --bs-dark-rgb: 15, 23, 42;
+
+  --bs-light: #f1f5f9; /* Slate 100 */
+  --bs-light-rgb: 241, 245, 249;
+
+  /* Base font family */
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+
+  /* Border radius tuning for a modern feel */
+  --bs-border-radius: .6rem;
+  --bs-border-radius-sm: .4rem;
+  --bs-border-radius-lg: .8rem;
+
+  /* Background/foreground tokens */
+  --md-bg: linear-gradient(to bottom, rgba(241,245,249,0.6), #ffffff);
+  --md-fg: #111827; /* Slate 800 */
+  /* Layout */
+  --sidebar-width: 250px;
+}
+
+[data-theme="dark"] {
+  --bs-body-color: #f8f9fa;
+  --bs-body-bg: #0a0a0a;
+  --bs-border-color: #3a3a3a;
+  --bs-card-bg: #1a1a1a;
+  --bs-card-cap-bg: #252525;
+  --bs-secondary: #9ca3af;
+  --bs-light: #2d2d2d;
+  --bs-light-rgb: 45, 45, 45;
+  --bs-dark: #f8f9fa;
+  --bs-dark-rgb: 248, 249, 250;
+  --bs-emphasis-color: #fff;
+  --bs-tertiary-bg: #2b2b2b;
+  --bs-heading-color: #ffffff;
+  --bs-link-color: #60a5fa;
+  --bs-link-hover-color: #93c5fd;
+  --bs-code-color: #f472b6;
+  --bs-highlight-bg: rgba(59, 130, 246, 0.15);
+  color-scheme: dark;
+  
+  /* Improved contrast for better readability */
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.06);
+  --bs-form-valid-color: #86efac;
+  --bs-form-valid-border-color: #22c55e;
+  --bs-form-invalid-color: #fca5a5;
+  --bs-form-invalid-border-color: #ef4444;
+  --bs-primary: #60a5fa; /* lighter primary for contrast */
+  --bs-primary-rgb: 96, 165, 250;
+  --bs-secondary: #94a3b8; /* slate 400 */
+  --bs-secondary-rgb: 148, 163, 184;
+  --bs-success: #22c55e;
+  --bs-warning: #f59e0b;
+  --bs-danger: #ef4444;
+  --bs-info: #93c5fd; /* primary 300 */
+  --bs-dark: #0b1220; /* deeper slate */
+  --bs-light: #1f2937; /* slate 800 as light in dark mode */
+  --md-bg: linear-gradient(to bottom, rgba(2,6,23,0.7), #0f172a);
+  --md-fg: #e5e7eb; /* slate 200 */
+}
+
+/* Global typography */
+html, body {
+  font-family: var(--bs-body-font-family);
+}
+
+/* Background and foreground similar to Mindelta globals */
+body {
+  color: var(--md-fg);
+  background: var(--md-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Buttons color harmonization */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #1d4ed8; /* primary 700 */
+  --bs-btn-hover-border-color: #1d4ed8;
+  --bs-btn-active-bg: #1e40af; /* primary 800 */
+  --bs-btn-active-border-color: #1e40af;
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: #1e293b; /* slate 800 */
+  --bs-btn-hover-border-color: #1e293b;
+  --bs-btn-active-bg: #0f172a; /* slate 900 */
+  --bs-btn-active-border-color: #0f172a;
+  --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
+}
+
+.btn-success {
+  --bs-btn-bg: var(--bs-success);
+  --bs-btn-border-color: var(--bs-success);
+  --bs-btn-hover-bg: #16a34a; /* green 600 */
+  --bs-btn-hover-border-color: #16a34a;
+}
+
+.btn-warning {
+  --bs-btn-bg: var(--bs-warning);
+  --bs-btn-border-color: var(--bs-warning);
+  --bs-btn-hover-bg: #d97706; /* amber 600 */
+  --bs-btn-hover-border-color: #d97706;
+}
+
+.btn-danger {
+  --bs-btn-bg: var(--bs-danger);
+  --bs-btn-border-color: var(--bs-danger);
+  --bs-btn-hover-bg: #dc2626; /* red 600 */
+  --bs-btn-hover-border-color: #dc2626;
+}
+
+/* Navbar to Mindelta dark slate */
+.navbar-dark.bg-dark {
+  background-color: #0f172a !important; /* slate 900 */
+}
+[data-theme="dark"] .navbar-dark.bg-dark { background-color: #0b1220 !important; }
+.navbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.navbar .nav-link {
+  color: #cbd5e1 !important; /* slate 300 */
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Sidebar list-group theming */
+.list-group-item {
+  border-color: #e2e8f0; /* slate 200 */
+}
+.list-group-item-action {
+  color: #334155; /* slate 700 */
+}
+.list-group-item-action:hover, .list-group-item-action:focus {
+  background-color: #eff6ff; /* primary 50 */
+  color: #1e3a8a; /* primary 900 */
+}
+[data-theme="dark"] .list-group-item { background-color: #0f172a; color: #e5e7eb; border-color: #1f2937; }
+[data-theme="dark"] .list-group-item-action:hover { background-color: rgba(96,165,250,0.15); color: #ffffff; }
+
+/* Cards and tables */
+.card { border-color: #e2e8f0; border-radius: var(--bs-border-radius); box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.card-header { background-color: #f8fafc; /* slate 50 */ font-weight: 600; }
+.table thead th { background-color: #f1f5f9; color: #334155; }
+[data-theme="dark"] .card { background-color: #0b1220; border-color: #1f2937; }
+[data-theme="dark"] .card-header { background-color: #111827; color: #e5e7eb; border-bottom-color: #1f2937; }
+[data-theme="dark"] .table thead th { background-color: #111827; color: #e5e7eb; }
+
+/* Forms */
+.form-control, .form-select { border-color: #cbd5e1; }
+.form-control:focus, .form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .15);
+}
+.form-check-input:checked { background-color: var(--bs-primary); border-color: var(--bs-primary); }
+[data-theme="dark"] .form-control, [data-theme="dark"] .form-select { background-color: #0b1220; color: #e5e7eb; border-color: #1f2937; }
+[data-theme="dark"] .form-control::placeholder { color: #94a3b8; }
+
+/* Responsive sidebar tweaks */
+@media (min-width: 992px) { /* lg and up */
+  /* Full-height app shell */
+  .app-shell { height: auto; }
+  .sidebar { 
+    border-right: none;
+    --bs-offcanvas-width: var(--sidebar-width); /* ensure Bootstrap offcanvas uses our width */
+    width: var(--sidebar-width);
+    position: static; /* not fixed */
+    height: auto;
+    overflow: visible;
+  }
+  .content { margin-left: 10px; padding: 0 !important; height: auto; overflow: visible; }
+  /* Remove left gutter right after the sidebar */
+  .content > .container,
+  .content > .container-fluid,
+  .content > .section,
+  .content .container,
+  .content .container-fluid,
+  .content .section { padding-left: 0 !important; }
+  /* Remove left padding on hero sections so they sit flush with the sidebar */
+  .content .hero { padding-left: 0 !important; }
+  /* Make the first element flush with the sidebar */
+  .content > *:first-child { margin-left: 0 !important; padding-left: 0 !important; }
+  /* Ensure Bootstrap rows align flush with sidebar using gutter variable */
+  .content .row { 
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+  }
+  .content .row > [class^="col"],
+  .content .row > [class*=" col"] {
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-right: calc(var(--bs-gutter-x) * .5);
+  }
+
+  /* Allow normal page scrolling */
+  html, body { height: auto; overflow: auto; }
+}
+
+/* Utilities inspired by Mindelta globals */
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.animate-spin { animation: spin 1s linear infinite; }
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #0f172a; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* Section spacing helpers */
+.section { padding: 1.5rem 1rem; }
+.section-title { font-weight: 700; color: #0f172a; }
+[data-theme="dark"] .section-title { color: #e5e7eb; }
+
+/* Hero banner option (if needed on dashboard) */
+.hero {
+  background: radial-gradient(1200px 400px at 10% -10%, rgba(37,99,235,.15), transparent),
+              radial-gradient(1000px 400px at 90% 10%, rgba(34,197,94,.12), transparent);
+  border-radius: 1rem;
+}
+[data-theme="dark"] .hero {
+  background: radial-gradient(1200px 400px at 10% -10%, rgba(96,165,250,.15), transparent),
+              radial-gradient(1000px 400px at 90% 10%, rgba(34,197,94,.12), transparent);
+}
